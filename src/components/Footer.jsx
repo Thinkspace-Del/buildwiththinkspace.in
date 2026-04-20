@@ -9,7 +9,7 @@ export default function Footer() {
             Thinkspace
           </div>
           <p className="font-mono text-xs uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
-            © Thinkspace. Keep Building.
+            © Keep thinking. Keep Building.
           </p>
         </div>
         <div className="flex flex-wrap gap-12">
@@ -50,7 +50,7 @@ export default function Footer() {
             </div>
             <div className="flex items-center gap-2 font-mono text-xs text-orange-700 dark:text-orange-500">
               <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
-              LIVE_BUILD_MODE
+              BUILDING
             </div>
           </div>
         </div>

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { ArrowRight } from "lucide-react";
+import { Quote } from "lucide-react";
 
 function App() {
   return (
@@ -91,7 +92,7 @@ function App() {
                 />
               </div>
               {/* Hacky Annotation Overlay */}
-              <div className="absolute -bottom-6 -right-6 bg-surface-container-lowest p-6 shadow-xl max-w-60 border border-outline-variant/10">
+              <div className="absolute -bottom-6 -right-6 bg-white p-6 shadow-xl max-w-60 border border-outline-variant/10">
                 <span className="font-mono text-[10px] text-orange-500 block mb-2">
                   ANNOTATION_REF_04
                 </span>
@@ -134,7 +135,7 @@ function App() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Songwriters / Artists */}
-              <div className="md:col-span-2 group relative overflow-hidden rounded-xl bg-surface-container-low p-8 h-100">
+              <div className="md:col-span-2 group relative overflow-hidden rounded-xl bg-white p-8 h-100">
                 <div className="relative z-10 h-full flex flex-col justify-between">
                   <span className="font-mono text-xs text-orange-500">
                     01 // CREATIVES
@@ -143,7 +144,7 @@ function App() {
                     <h3 className="font-headline font-bold text-3xl mb-2">
                       Songwriters &amp; Artists
                     </h3>
-                    <p className="text-on-surface-variant font-body max-w-xs">
+                    <p className="text-black font-body max-w-xs">
                       Building new worlds through sound and canvas, sharing the
                       struggle of the blank page.
                     </p>
@@ -151,7 +152,7 @@ function App() {
                 </div>
                 <img
                   alt="Artist"
-                  className="absolute top-0 right-0 w-1/2 h-full object-cover grayscale contrast-125 opacity-20 group-hover:opacity-40 transition-opacity"
+                  className="absolute top-0 right-0 w-1/2 h-full object-cover grayscale contrast-125 opacity-30 group-hover:opacity-40 transition-opacity"
                   data-alt="high contrast grainy black and white photo of a songwriter hunched over a piano in a dimly lit room with sheet music scattered around"
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUWbiuGqCc6eib7UZtqlxdg4epUquaEzONeOc7qv54BefairglbYYKQbNePJblVTKY2MQuLXz4Gy4L9su33XsptHZZQQx1XUVlU1Zoz8TbBohWDf4S8RreOOKSqXjeQU-kCt3_YEV2DPeKKD7Y9SJL6ZlpPrxZG01kojId9O2WzmElg46hLRNmc8Xdsjaiq9Gp913lQHbwlO2GiJ9CKL-MGJM9SlvVGcX1XOmIEVssOBVdFnbjD3JjCB_6z92ivXsqpLl-gdPvVoA"
                 />
@@ -175,7 +176,7 @@ function App() {
                 </div>
                 <img
                   alt="Code"
-                  className="absolute top-0 right-0 w-full h-full object-cover grayscale contrast-150 opacity-10 group-hover:scale-110 transition-transform duration-[2s]"
+                  className="absolute top-0 right-0 w-full h-full object-cover grayscale contrast-150 opacity-30  transition-transform duration-[2s]"
                   data-alt="grainy black and white overhead view of a messy developer desk with multiple monitors, tangled wires, and mechanical keyboards"
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyKlIJ6i8wePACf2W0lBbkN57qC9cVDhxqDlUIOrvF4dUX_SA2hzj8WGMfZ7auRaVC8oeQRNYDLznF6G6bdrQfz9IGT5HNwSRH9YyeTTEHn_YQXnqHGs9VaqPLss5tApApN6PXOsLEQUZZuYbz_nXD_1u3vMwFEZAoVRyQCxCyHDZ2WE9VhzeYgQLylup1tQ3eo6mH7MmvZSlHb4cFYHGVQZvY0_37Xpnw44uqwm5OhAPsyCZPwAN2HL-XlJjp1QgJtW1nJlk_Fio"
                 />
@@ -199,17 +200,17 @@ function App() {
                 </div>
                 <img
                   alt="Dance"
-                  className="absolute inset-0 w-full h-full object-cover grayscale contrast-125 mix-blend-multiply opacity-30 group-hover:opacity-50 transition-opacity"
+                  className="absolute inset-0 w-full h-full object-cover grayscale contrast-125 mix-blend-multiply opacity-30"
                   data-alt="black and white dynamic action shot of a dancer in a industrial studio with dramatic shadows and dust motes in the air"
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeqNdhgmltS1EcVzbaBQfPJ8TfmYLvNXKeFZJZ0FoyBAcepUqTV_KMMWiPTTMpvAEwLfEvLtWpy0-9_4qztwxMHlTDp0vOm7PcsuS7yqT70J0AyMml689QXb0Mo57S__zKR4Exzrg6kLDWmaWNVtVtXhgsdl1DDJkOh_NU-ABIlFfE_EnvBxSj45LuRy18UTHHABj564W0_Qz3YLGTV5EJYJpCu0v3hceIGiXbn7RbJ8lw1hH8Tctp6Xy6dVvsRqEhpHjxuv2ow08"
                 />
               </div>
 
               {/* The Collective Quote */}
-              <div className="md:col-span-2 bg-orange-800 flex items-center p-12 rounded-xl text-on-primary">
+              <div className="md:col-span-2 bg-orange-800 flex items-center p-12 rounded-xl text-white">
                 <div className="relative">
-                  <span className="material-symbols-outlined text-6xl opacity-20 absolute -top-8 -left-8">
-                    format_quote
+                  <span className="material-symbols-outlined text-6xl opacity-20 absolute -top-6 -left-8 ">
+                    <Quote size={48} />
                   </span>
                   <blockquote className="font-headline font-bold text-3xl md:text-4xl leading-tight">
                     "The diversity of the tribe is the strength of the engine.
@@ -237,7 +238,7 @@ function App() {
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Link
                 to="/start-building"
-                className="bg-on-surface text-surface px-12 py-5 rounded-lg font-headline font-bold text-xl active:scale-95 transition-all"
+                className="bg-black text-white px-10 py-5 rounded-sm font-headline font-bold text-xl active:scale-95 transition-all"
               >
                 Apply to Build
               </Link>

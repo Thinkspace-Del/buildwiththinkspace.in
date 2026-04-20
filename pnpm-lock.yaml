@@ -17,6 +17,9 @@ importers:
       lucide-react:
         specifier: ^1.8.0
         version: 1.8.0(react@19.2.5)
+      pixelarticons:
+        specifier: ^2.1.0
+        version: 2.1.0(react@19.2.5)
       react:
         specifier: ^19.2.5
         version: 19.2.5
@@ -891,6 +894,12 @@ packages:
   picomatch@4.0.4:
     resolution: {integrity: sha512-QP88BAKvMam/3NxH6vj2o21R6MjxZUAd6nlwAS/pnGvN9IVLocLHxGYIzFhg6fUQ+5th6P4dv4eW9jX3DSIj7A==}
     engines: {node: '>=12'}
+
+  pixelarticons@2.1.0:
+    resolution: {integrity: sha512-t03/DsFadIEU7SCwmi4mcnYgZMCKPawvvPt+KM9bW5nC4TcNFatCD196Qm9IT/5bIIbSCGjmjAoMrTZKxRBdJw==}
+    hasBin: true
+    peerDependencies:
+      react: '>=16'
 
   postcss@8.5.10:
     resolution: {integrity: sha512-pMMHxBOZKFU6HgAZ4eyGnwXF/EvPGGqUr0MnZ5+99485wwW41kW91A4LOGxSHhgugZmSChL5AlElNdwlNgcnLQ==}
@@ -1847,6 +1856,10 @@ snapshots:
   picocolors@1.1.1: {}
 
   picomatch@4.0.4: {}
+
+  pixelarticons@2.1.0(react@19.2.5):
+    dependencies:
+      react: 19.2.5
 
   postcss@8.5.10:
     dependencies:

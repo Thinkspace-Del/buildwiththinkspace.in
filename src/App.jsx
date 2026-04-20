@@ -54,7 +54,7 @@ function App() {
             </h1>
             <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
               <Link
-                to="/join"
+                to="/start-building"
                 className="bg-orange-800 text-white px-10 py-4 rounded-lg font-headline font-bold text-lg tracking-tight active:scale-95 transition-all shadow-lg shadow-primary/10"
               >
                 Start Building
@@ -236,7 +236,7 @@ function App() {
             </h2>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Link
-                to="/join"
+                to="/start-building"
                 className="bg-on-surface text-surface px-12 py-5 rounded-lg font-headline font-bold text-xl active:scale-95 transition-all"
               >
                 Apply to Build

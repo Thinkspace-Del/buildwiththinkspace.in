@@ -256,7 +256,7 @@ function About() {
             </h2>
             <div className="flex flex-col md:flex-row gap-8 justify-center items-center">
               <Link
-                to="/join"
+                to="/start-building"
                 className="w-full md:w-auto bg-primary text-on-primary px-16 py-5 text-lg font-bold tracking-tight rounded hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
                 Join the next cohort

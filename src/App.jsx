@@ -112,9 +112,7 @@ function App() {
               </h2>
               <div className="h-px w-24 bg-outline-variant/30"></div>
               <p className="text-on-surface-variant text-lg leading-relaxed font-body max-w-lg">
-                Thinkspace is the sanctuary for the restless. We provide the
-                structure, the community, and the momentum to move your vision
-                from a fleeting thought to a physical or digital reality.
+                Thinkspace is a community like no other, we welcome thinkers and creators of all kinds to come and share their experience, ideas and innovations! We truly believe that the best outcomes come when you share your ideas and ideate over them with people of all backgrounds.
               </p>
             </div>
           </div>
@@ -128,9 +126,7 @@ function App() {
                 Multiple Heads, One Goal.
               </h2>
               <p className="font-mono text-sm text-on-surface-variant tracking-tight max-w-2xl">
-                A hallmark for a great product, a great song, a great image
-                comes when multiple heads come together, from different
-                backgrounds...
+                It's for people who want to show their passions to the world—no matter what they are. You could be a songwriter, an artist, a developer, a dancer—anyone who doesn't just consume.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -213,12 +209,10 @@ function App() {
                     <Quote size={48} />
                   </span>
                   <blockquote className="font-headline font-bold text-3xl md:text-4xl leading-tight">
-                    "The diversity of the tribe is the strength of the engine.
-                    When the painter talks to the coder, something impossible
-                    begins to happen."
+                    Remembering that you are going to die is the best way I know to avoid the trap of thinking you have something to lose. You are already naked. There is no reason not to follow your heart.”
                   </blockquote>
                   <div className="mt-8 font-mono text-xs tracking-widest uppercase opacity-70">
-                    — THINKSPACE COLLECTIVE MANIFESTO
+                    — Steve Jobs
                   </div>
                 </div>
               </div>
@@ -226,7 +220,7 @@ function App() {
           </div>
         </section>
 
-        {/* Final CTA / The Gallery Finish */}
+        {/* Final CTA / The Gallery Finish
         <section className="py-32 bg-surface flex flex-col items-center justify-center text-center px-6">
           <div className="max-w-3xl space-y-10">
             <div className="font-mono text-xs tracking-[0.4em] text-on-surface-variant opacity-40">
@@ -250,7 +244,23 @@ function App() {
               </p>
             </div>
           </div>
-        </section>
+        </section> */}
+                <section className="py-10 bg-white text-center">
+                  <div className="max-w-3xl mx-auto px-6">
+                    <h2 className="text-6xl md:text-8xl lg:text-9xl font-headline font-bold tracking-tighter mb-16">
+                      Stop dreaming. <br />
+                      Start building.
+                    </h2>
+                                <div className=" gap-10 justify-center pt-10 pb-20">
+              <Link
+                to="/start-building"
+                className="bg-black text-white px-10 py-5 rounded-sm font-headline font-bold text-xl active:scale-95 transition-all"
+              >
+                Apply to Build
+              </Link>
+            </div>
+                  </div>
+                </section>
       </main>
 
       {/* Footer */}

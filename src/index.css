@@ -3,6 +3,7 @@
 @theme {
   /* Core Brand Colors */
   --color-primary: var(--primary);
+  --color-primary-dark-text: var(--primary-dark-text);
   --color-on-primary: var(--on-primary);
   
   /* Highlight Accent (Secondary) */
@@ -30,6 +31,7 @@
 :root {
   /* Theme: DIM_ELECTRIC (Modified DaisyUI Dim) */
   --primary: oklch(85% 0.14 250); /* Pastel Electric Blue */
+  --primary-dark-text: oklch(61.972% 0.20827 255.821); /* Deep contrast for the blue */
   --on-primary: oklch(25% 0.04 250); /* Deep contrast for the blue */
   
   --highlight: oklch(86.078% 0.142 206.182); /* Soft Muted Blue */

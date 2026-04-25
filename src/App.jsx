@@ -66,10 +66,10 @@ function App() {
                 </div>
                 <div className="absolute -bottom-6 -right-4 bg-surface-container-lowest p-6 shadow-2xl max-w-xs border border-on-surface/10 z-10">
                   <p className="font-mono text-[10px] text-primary mb-2">
-                    // THE_WORKSHOP
+                    The Space temple
                   </p>
                   <p className="text-sm text-on-surface-variant leading-tight italic">
-                    Where ideas stop being dreams and start being demos.
+                    This room is an extension of my mind
                   </p>
                 </div>
               </div>
@@ -121,7 +121,7 @@ function App() {
               <div className="relative z-10 max-w-5xl">
                 <h2 className="text-5xl md:text-7xl lg:text-8xl font-headline font-bold tracking-tighter leading-[0.9] mb-16">
                   Artist, developer, songwriter, photographer. <br />
-                  <span className="text-primary italic">
+                  <span className="text-primary-dark-text italic pt-3">
                     It doesn't matter.
                   </span>
                 </h2>

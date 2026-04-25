@@ -4,9 +4,18 @@ import { supabase } from "../lib/supabase";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 const joinSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
-  email: z.string().email({ message: "Invalid email address." }),
-  phone: z.string().min(10, { message: "Valid phone number is required." }),
+  name: z
+    .string()
+    .min(2, { message: "Name must be at least 2 characters." })
+    .regex(/^[a-zA-Z\s\-']+$/, {
+      message: "Name cannot contain numbers or special characters.",
+    })
+    .max(100),
+  email: z.email({ message: "Invalid email address." }),
+  phone: z
+    .string()
+    .min(10, { message: "Valid phone number is required." })
+    .max(10, { message: "Phone number should only contain 10 digits." }),
   craft: z
     .string()
     .min(3, { message: "Craft is required (min 3 characters)." }),
@@ -76,6 +85,28 @@ export default function JoinForm() {
     }
   };
 
+  const checkDuplicate = async (field, value) => {
+    if (!value) return;
+
+    let queryValue = value;
+    if (field === "phone") {
+      queryValue = Number(value.replace(/\D/g, ""));
+    }
+
+    const { data } = await supabase
+      .from("builders")
+      .select("id")
+      .eq(field, queryValue)
+      .maybeSingle();
+
+    if (data) {
+      setErrors((prev) => ({
+        ...prev,
+        [field]: `This ${field} is already in our system.`,
+      }));
+    }
+  };
+
   if (status === "success") {
     return (
       <div className="h-full flex flex-col items-center justify-center text-center py-12 px-4 space-y-6">
@@ -103,13 +134,20 @@ export default function JoinForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-8">
       <div>
-        <h2 className="text-3xl font-headline font-bold mb-2">Access Request</h2>
-        <p className="text-sm font-mono text-on-surface-variant opacity-70">Fill the parameters below.</p>
+        <h2 className="text-3xl font-headline font-bold mb-2">
+          Access Request
+        </h2>
+        <p className="text-sm font-mono text-on-surface-variant opacity-70">
+          Fill the parameters below.
+        </p>
       </div>
 
       <div className="space-y-6">
         <div className="space-y-2">
-          <label htmlFor="name" className="block font-mono text-m font-bold uppercase tracking-wider text-on-surface-variant">
+          <label
+            htmlFor="name"
+            className="block font-mono text-m font-bold uppercase tracking-wider text-on-surface-variant"
+          >
             01. Name <span className="text-error font-bold">*</span>
           </label>
           <input
@@ -121,12 +159,17 @@ export default function JoinForm() {
             className={`w-full bg-surface-container-low border-0 border-b-2 border-on-surface/10 hover:border-b-primary focus:border-b-primary focus:ring-0 px-4 py-3 font-body transition-colors rounded-t ${errors.name ? "border-b-error" : ""}`}
             placeholder=""
           />
-          {errors.name && <p className="text-red-500 text-sm font-headline">{errors.name}</p>}
+          {errors.name && (
+            <p className="text-red-500 text-sm font-headline">{errors.name}</p>
+          )}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-2">
-            <label htmlFor="email" className="block font-mono text-m font-bold uppercase tracking-wider text-on-surface-variant">
+            <label
+              htmlFor="email"
+              className="block font-mono text-m font-bold uppercase tracking-wider text-on-surface-variant"
+            >
               02. Email <span className="text-error font-bold">*</span>
             </label>
             <input
@@ -137,11 +180,19 @@ export default function JoinForm() {
               onChange={handleChange}
               className={`w-full bg-surface-container-low border-0 border-b-2 border-on-surface/10 hover:border-b-primary focus:border-b-primary focus:ring-0 px-4 py-3 font-body transition-colors rounded-t ${errors.email ? "border-b-error" : ""}`}
               placeholder=""
+              onBlur={() => checkDuplicate("email", formData.email)}
             />
-            {errors.email && <p className="text-red-500 text-sm font-headline">{errors.email}</p>}
+            {errors.email && (
+              <p className="text-red-500 text-sm font-headline">
+                {errors.email}
+              </p>
+            )}
           </div>
           <div className="space-y-2">
-            <label htmlFor="phone" className="block font-mono text-m font-bold uppercase tracking-wider text-on-surface-variant">
+            <label
+              htmlFor="phone"
+              className="block font-mono text-m font-bold uppercase tracking-wider text-on-surface-variant"
+            >
               03. Phone <span className="text-error font-bold">*</span>
             </label>
             <input
@@ -152,14 +203,26 @@ export default function JoinForm() {
               onChange={handleChange}
               className={`w-full bg-surface-container-low border-0 border-b-2 border-on-surface/10 hover:border-b-primary focus:border-b-primary focus:ring-0 px-4 py-3 font-body transition-colors rounded-t ${errors.phone ? "border-b-error" : ""}`}
               placeholder=""
+              onBlur={() => {
+                if (formData.phone.length === 10)
+                  checkDuplicate("phone", formData.phone);
+              }}
             />
-            {errors.phone && <p className="text-red-500 text-sm font-headline">{errors.phone}</p>}
+            {errors.phone && (
+              <p className="text-red-500 text-sm font-headline">
+                {errors.phone}
+              </p>
+            )}
           </div>
         </div>
 
         <div className="space-y-2">
-          <label htmlFor="craft" className="block font-mono text-m font-bold uppercase tracking-wider text-on-surface-variant">
-            04. Hobby / Obsession <span className="text-error font-bold">*</span>
+          <label
+            htmlFor="craft"
+            className="block font-mono text-m font-bold uppercase tracking-wider text-on-surface-variant"
+          >
+            04. Hobby / Obsession{" "}
+            <span className="text-error font-bold">*</span>
           </label>
           <input
             type="text"
@@ -170,11 +233,16 @@ export default function JoinForm() {
             className={`w-full bg-surface-container-low border-0 border-b-2 border-on-surface/10 hover:border-b-primary focus:border-b-primary focus:ring-0 px-4 py-3 font-body transition-colors rounded-t ${errors.craft ? "border-b-error" : ""}`}
             placeholder=""
           />
-          {errors.craft && <p className="text-red-500 text-sm font-headline">{errors.craft}</p>}
+          {errors.craft && (
+            <p className="text-red-500 text-sm font-headline">{errors.craft}</p>
+          )}
         </div>
 
         <div className="space-y-2">
-          <label htmlFor="links" className="block font-mono text-m font-bold uppercase tracking-wider text-on-surface-variant">
+          <label
+            htmlFor="links"
+            className="block font-mono text-m font-bold uppercase tracking-wider text-on-surface-variant"
+          >
             05. Socials / Portfolio
           </label>
           <input
@@ -189,14 +257,17 @@ export default function JoinForm() {
 
       <div className="pt-6 relative group inline-block w-full">
         <div className="absolute inset-0 bg-primary/20 scale-y-75 scale-x-95 translate-y-2 translate-x-1 blur-md -rotate-1 transition-all group-hover:blur-xl group-hover:scale-100 group-hover:translate-x-0 group-hover:translate-y-1"></div>
+
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="relative w-full bg-surface-container-high border-2 border-primary text-primary py-5 font-mono font-bold text-lg tracking-widest uppercase transition-all duration-300 hover:bg-primary hover:text-on-primary flex items-center justify-center gap-3 overflow-hidden disabled:opacity-70 group/btn"
+          className="relative w-full bg-primary border-2 border-primary text-on-primary py-5 font-mono font-bold text-lg tracking-widest uppercase transition-all duration-300 hover:bg-primary/90 flex items-center justify-center gap-3 overflow-hidden disabled:opacity-70 disabled:cursor-not-allowed shadow-[4px_4px_0px_0px_currentColor] hover:shadow-[2px_2px_0px_0px_currentColor] hover:translate-y-0.5 hover:translate-x-0.5 group/btn"
         >
-          <div className="absolute top-0 -left-full w-1/2 h-full bg-gradient-to-r from-transparent via-on-primary/30 to-transparent group-hover/btn:left-[200%] transition-all duration-1000"></div>
+          <div className="absolute top-0 -left-full w-1/2 h-full bg-linear-to-r from-transparent via-on-primary/30 to-transparent group-hover/btn:left-[200%] transition-all duration-1000"></div>
           {status === "submitting" ? (
-            <span className="flex items-center gap-2 animate-pulse">TRANSMITTING...</span>
+            <span className="flex items-center gap-2 animate-pulse">
+              TRANSMITTING...
+            </span>
           ) : (
             <>
               <span className="tracking-[0.2em] relative z-10">JOIN_US</span>
@@ -204,7 +275,11 @@ export default function JoinForm() {
             </>
           )}
         </button>
-        {status === "error" && <p className="text-red-500 text-sm font-headline mt-4 text-center">Error transmitting signal.</p>}
+        {status === "error" && (
+          <p className="text-red-500 text-sm font-headline mt-4 text-center">
+            Error transmitting signal.
+          </p>
+        )}
       </div>
     </form>
   );

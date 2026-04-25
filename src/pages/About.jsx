@@ -52,9 +52,9 @@ function About() {
                 </div>
                 <div className="max-w-xl space-y-8">
                   <p className="text-xl md:text-2xl text-on-surface-variant leading-relaxed">
-                    The modern world is designed to keep you horizontal. It
-                    wants you blindly consuming in bed, scrolling through lives
-                    you aren't living, watching things you aren't making.
+                    It's easy to stay horizontal—blindly consuming in bed,
+                    letting your day sweep away while your passions stay
+                    dormant. You've slept on your interests for too long.
                   </p>
                   <div className="p-6 bg-surface-container-low border-l-4 border-primary">
                     <span className="font-mono text-xs text-on-surface-variant block mb-2">
@@ -124,13 +124,14 @@ function About() {
                     Active State
                   </span>
                   <h3 className="text-4xl md:text-5xl font-headline font-bold mt-8 leading-none">
-                    The hub for the obsessed.
+                    Where creatives collide.
                   </h3>
                   <p className="mt-8 text-lg text-on-surface-variant leading-relaxed max-w-2xl">
-                    Thinkspace is not a school. It's a gathering of people who
-                    realized that the only way to learn is to build. We provide
-                    the infrastructure, the pressure, and the community. You
-                    provide the grit.
+                    We organize meetups for creative people of all backgrounds to
+                    discuss projects and explore new themes. We provide the
+                    infrastructure, the pressure, and the community. You
+                    provide the grit. You won't know what you're capable of
+                    until you get up and build.
                   </p>
                 </div>
                 <div className="mt-12 flex items-center justify-between border-t border-outline-variant/30 pt-6">
@@ -177,7 +178,7 @@ function About() {
                     Protocol
                   </span>
                   <h4 className="text-2xl font-headline font-bold mt-2 italic">
-                    Ship every weekend.
+                    Meet, Discuss, Execute.
                   </h4>
                 </div>
                 <div className="w-16 h-16 rounded-full border border-primary-fixed/30 flex items-center justify-center group-hover:rotate-180 transition-transform duration-700">

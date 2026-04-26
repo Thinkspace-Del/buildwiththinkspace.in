@@ -15,13 +15,16 @@ function App() {
   };
 
   return (
-    <div data-theme={theme} className="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary relative transition-colors duration-500 min-h-screen">
+    <div
+      data-theme={theme}
+      className="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary relative transition-colors duration-500 min-h-screen"
+    >
       <div className="fixed inset-0 dark-veil z-[-1]"></div>
 
       {/* Internal Theme Switcher (Temporary) */}
-      <button 
+      <button
         onClick={toggleTheme}
-        className="fixed bottom-4 left-4 z-[100] bg-primary text-on-primary p-2 rounded-full shadow-lg font-mono text-[10px] uppercase tracking-widest opacity-20 hover:opacity-100 transition-opacity"
+        className="fixed bottom-4 left-4 z-100 bg-primary text-on-primary p-2 rounded-full shadow-lg font-mono text-[10px] uppercase tracking-widest opacity-20 hover:opacity-100 transition-opacity"
       >
         Cycle Theme: {theme}
       </button>
@@ -88,7 +91,6 @@ function App() {
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuepU3jNn5RG-cqGM6nI0QpYazfJCPPubU36EdlPSCKpv2TyZCgfHFnG0nmwAY-SdoYoSd56g0dZ_zWQLbyatgXbBDPTihoOb9xKzGyzNDk1LHWoMxPuhqFJW1ZyvUDDooryyPYTePAoWKirm9Wr2q-twq5_7GKgnfWm4BEDyzNvRoqh79CpQSF2b2cm4bXP7QlOp2HY3ijLH9hPSYNNtzplX8SnSYJ7MRDHI1SsjOV8Dg3OnIiLOMzgRSPPRHrGWFLmhdwgjnOBw"
                 />
               </div>
-
             </div>
             <div className="space-y-8">
               <div className="inline-block px-3 py-1 bg-primary/10 text-primary font-mono text-xs rounded-full uppercase tracking-widest">
@@ -112,7 +114,7 @@ function App() {
         {/* 03. THE COLLECTIVE: One Table */}
         <section className="py-32 px-6 md:px-24 bg-surface">
           <div className="max-w-7xl mx-auto">
-            <div className="relative overflow-hidden rounded-2xl bg-inverse-surface text-inverse-on-surface p-12 md:p-24 min-h-[600px] flex flex-col justify-center group">
+            <div className="relative overflow-hidden rounded-2xl bg-inverse-surface text-inverse-on-surface p-12 md:p-24 min-h-150 flex flex-col justify-center group">
               <img
                 alt="Shared creative workspace"
                 className="absolute inset-0 w-full h-full object-cover grayscale opacity-10 contrast-150"
@@ -127,9 +129,9 @@ function App() {
                 </h2>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
                   <p className="text-xl md:text-2xl text-inverse-on-surface-variant leading-relaxed">
-                    The best ideas don't happen in a vacuum. We organize
-                    meetups for creative people of all backgrounds to tear into
-                    projects and discuss new themes.
+                    The best ideas don't happen in a vacuum. We organize meetups
+                    for creative people of all backgrounds to tear into projects
+                    and discuss new themes.
                   </p>
                   <p className="text-xl md:text-2xl text-inverse-on-surface-variant leading-relaxed">
                     We’re here to stop sleeping on our potential and start
@@ -143,8 +145,14 @@ function App() {
                     <span className="w-4 h-4 rounded-full border border-current flex items-center justify-center animate-pulse">
                       ●
                     </span>
-                    Photo by <a href="https://unsplash.com/@headwayio?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Headway</a> on <a href="https://unsplash.com/photos/black-smartphone-near-person-5QgIuuBxKwM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-      
+                    Photo by{" "}
+                    <a href="https://unsplash.com/@headwayio?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+                      Headway
+                    </a>{" "}
+                    on{" "}
+                    <a href="https://unsplash.com/photos/black-smartphone-near-person-5QgIuuBxKwM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+                      Unsplash
+                    </a>
                   </div>
                 </div>
               </div>
@@ -168,7 +176,10 @@ function App() {
         </section>
 
         {/* 05. RESOLUTION: Final Call with Embedded Form */}
-        <section id="join" className="py-32 lg:py-48 bg-surface-container-lowest overflow-hidden">
+        <section
+          id="join"
+          className="py-32 lg:py-48 bg-surface-container-lowest overflow-hidden"
+        >
           <div className="max-w-7xl mx-auto px-6 md:px-24 text-on-surface">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
               <div className="lg:sticky lg:top-32">

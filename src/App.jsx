@@ -5,29 +5,12 @@ import JoinForm from "./components/JoinForm";
 import { Quote } from "lucide-react";
 
 function App() {
-  const [theme, setTheme] = useState("default");
-
-  // Cycle through themes for testing
-  const toggleTheme = () => {
-    const themes = ["default", "midnight", "industrial"];
-    const nextIndex = (themes.indexOf(theme) + 1) % themes.length;
-    setTheme(themes[nextIndex]);
-  };
-
   return (
     <div
-      data-theme={theme}
+      data-theme="default"
       className="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary relative transition-colors duration-500 min-h-screen"
     >
       <div className="fixed inset-0 dark-veil z-[-1]"></div>
-
-      {/* Internal Theme Switcher (Temporary) */}
-      <button
-        onClick={toggleTheme}
-        className="fixed bottom-4 left-4 z-100 bg-primary text-on-primary p-2 rounded-full shadow-lg font-mono text-[10px] uppercase tracking-widest opacity-20 hover:opacity-100 transition-opacity"
-      >
-        Cycle Theme: {theme}
-      </button>
 
       <Navbar />
 

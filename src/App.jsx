@@ -81,7 +81,7 @@ function App() {
         </section>
 
         {/* 02. IDENTITY: The Gathering */}
-        <section className="bg-surface-container-low py-32 px-6 md:px-24">
+        <section className="bg-surface-container-low py-[108px] px-6 md:px-24">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="relative group">
               <div className="aspect-4/5 bg-surface-container overflow-hidden rounded-xl shadow-xl">
@@ -102,16 +102,20 @@ function App() {
               </h2>
               <div className="h-px w-24 bg-primary"></div>
               <p className="text-on-surface-variant text-xl leading-relaxed font-body">
-               Thinkspace is a community like no other, we welcome thinkers and creators of all kinds to come and share their experience, ideas and innovations! We truly believe that the best outcomes come when you share your ideas and ideate over them with people of all backgrounds.
+                Thinkspace is a community like no other, we welcome thinkers and
+                creators of all kinds to come and share their experience, ideas
+                and innovations! We truly believe that the best outcomes come
+                when you share your ideas and ideate over them with people of
+                all backgrounds.
               </p>
             </div>
           </div>
         </section>
 
         {/* 03. THE COLLECTIVE: One Table */}
-        <section className="py-32 px-6 md:px-24 bg-surface">
+        <section className="py-[108px] px-6 md:px-24 bg-surface">
           <div className="max-w-7xl mx-auto">
-            <div className="relative overflow-hidden rounded-2xl bg-inverse-surface text-inverse-on-surface p-12 md:p-24 min-h-150 flex flex-col justify-center group">
+            <div className="relative overflow-hidden rounded-2xl bg-inverse-surface text-inverse-on-surface p-12 md:p-24 min-h-[550px] flex flex-col justify-center group">
               <img
                 alt="Shared creative workspace"
                 className="absolute inset-0 w-full h-full object-cover grayscale opacity-10 contrast-150"
@@ -158,7 +162,7 @@ function App() {
         </section>
 
         {/* 04. BREAKER: The Jobs Quote */}
-        <section className="py-32 px-6 md:px-24 bg-primary text-on-primary">
+        <section className="py-[108px] px-6 md:px-24 bg-primary text-on-primary">
           <div className="max-w-5xl mx-auto relative">
             <Quote className="w-32 h-32 opacity-10 absolute -top-12 -left-12 rotate-180" />
             <blockquote className="font-headline font-bold text-4xl md:text-6xl leading-tight relative z-10">
@@ -175,7 +179,7 @@ function App() {
         {/* 05. RESOLUTION: Final Call with Embedded Form */}
         <section
           id="join"
-          className="py-32 lg:py-48 bg-surface-container-lowest overflow-hidden"
+          className="py-[108px] lg:py-[170px] bg-surface-container-lowest overflow-hidden"
         >
           <div className="max-w-7xl mx-auto px-6 md:px-24 text-on-surface">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">

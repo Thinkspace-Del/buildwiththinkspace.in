@@ -110,15 +110,15 @@ export default function JoinForm() {
   if (status === "success") {
     return (
       <div className="h-full flex flex-col items-center justify-center text-center py-12 px-4 space-y-6">
-        <div className="w-24 h-24 bg-surface-container-low border border-on-surface/10 rounded-full flex items-center justify-center mb-4 relative shadow-inner">
+        <div className="w-24 h-24 bg-muted border border-foreground/10 rounded-full flex items-center justify-center mb-4 relative shadow-inner">
           <div className="absolute inset-0 rounded-full bg-primary/10 animate-ping"></div>
           <CheckCircle2 className="w-12 h-12 text-primary" strokeWidth={1.5} />
         </div>
         <div className="space-y-3">
-          <h3 className="text-4xl font-headline font-bold text-on-surface tracking-tight">
+          <h3 className="text-4xl font-headline font-bold text-foreground tracking-tight">
             Signal Received.
           </h3>
-          <p className="text-on-surface-variant font-mono text-sm max-w-sm mx-auto leading-relaxed">
+          <p className="text-muted-foreground font-mono text-sm max-w-sm mx-auto leading-relaxed">
             {`> DATA_UPLOAD_COMPLETE `}
             <br />
             We review applications weekly. Keep your comms open.
@@ -134,10 +134,10 @@ export default function JoinForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-8">
       <div>
-        <h2 className="text-3xl font-headline font-bold mb-2">
+        <h2 className="text-3xl font-headline font-bold mb-2 text-foreground">
           Access Request
         </h2>
-        <p className="text-sm font-mono text-on-surface-variant opacity-70">
+        <p className="text-sm font-mono text-muted-foreground opacity-70">
           Fill the parameters below.
         </p>
       </div>
@@ -146,9 +146,9 @@ export default function JoinForm() {
         <div className="space-y-2">
           <label
             htmlFor="name"
-            className="block font-mono text-m font-bold uppercase tracking-wider text-on-surface-variant"
+            className="block font-mono text-m font-bold uppercase tracking-wider text-muted-foreground"
           >
-            01. Name <span className="text-error font-bold">*</span>
+            01. Name <span className="text-destructive font-bold">*</span>
           </label>
           <input
             type="text"
@@ -156,11 +156,11 @@ export default function JoinForm() {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            className={`w-full bg-surface-container-low border-0 border-b-2 border-on-surface/10 hover:border-b-primary focus:border-b-primary focus:ring-0 px-4 py-3 font-body transition-colors rounded-t ${errors.name ? "border-b-error" : ""}`}
+            className={`w-full bg-muted border-0 border-b-2 border-foreground/30 hover:border-b-primary focus:border-b-primary focus:ring-0 px-4 py-3 font-sans transition-colors rounded-t text-foreground ${errors.name ? "border-b-destructive" : ""}`}
             placeholder=""
           />
           {errors.name && (
-            <p className="text-red-500 text-sm font-headline">{errors.name}</p>
+            <p className="text-destructive text-sm font-headline">{errors.name}</p>
           )}
         </div>
 
@@ -168,9 +168,9 @@ export default function JoinForm() {
           <div className="space-y-2">
             <label
               htmlFor="email"
-              className="block font-mono text-m font-bold uppercase tracking-wider text-on-surface-variant"
+              className="block font-mono text-m font-bold uppercase tracking-wider text-muted-foreground"
             >
-              02. Email <span className="text-error font-bold">*</span>
+              02. Email <span className="text-destructive font-bold">*</span>
             </label>
             <input
               type="email"
@@ -178,12 +178,12 @@ export default function JoinForm() {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className={`w-full bg-surface-container-low border-0 border-b-2 border-on-surface/10 hover:border-b-primary focus:border-b-primary focus:ring-0 px-4 py-3 font-body transition-colors rounded-t ${errors.email ? "border-b-error" : ""}`}
+              className={`w-full bg-muted border-0 border-b-2 border-foreground/30 hover:border-b-primary focus:border-b-primary focus:ring-0 px-4 py-3 font-sans transition-colors rounded-t text-foreground ${errors.email ? "border-b-destructive" : ""}`}
               placeholder=""
               onBlur={() => checkDuplicate("email", formData.email)}
             />
             {errors.email && (
-              <p className="text-red-500 text-sm font-headline">
+              <p className="text-destructive text-sm font-headline">
                 {errors.email}
               </p>
             )}
@@ -191,9 +191,9 @@ export default function JoinForm() {
           <div className="space-y-2">
             <label
               htmlFor="phone"
-              className="block font-mono text-m font-bold uppercase tracking-wider text-on-surface-variant"
+              className="block font-mono text-m font-bold uppercase tracking-wider text-muted-foreground"
             >
-              03. Phone <span className="text-error font-bold">*</span>
+              03. Phone <span className="text-destructive font-bold">*</span>
             </label>
             <input
               type="tel"
@@ -201,7 +201,7 @@ export default function JoinForm() {
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              className={`w-full bg-surface-container-low border-0 border-b-2 border-on-surface/10 hover:border-b-primary focus:border-b-primary focus:ring-0 px-4 py-3 font-body transition-colors rounded-t ${errors.phone ? "border-b-error" : ""}`}
+              className={`w-full bg-muted border-0 border-b-2 border-foreground/30 hover:border-b-primary focus:border-b-primary focus:ring-0 px-4 py-3 font-sans transition-colors rounded-t text-foreground ${errors.phone ? "border-b-destructive" : ""}`}
               placeholder=""
               onBlur={() => {
                 if (formData.phone.length === 10)
@@ -209,7 +209,7 @@ export default function JoinForm() {
               }}
             />
             {errors.phone && (
-              <p className="text-red-500 text-sm font-headline">
+              <p className="text-destructive text-sm font-headline">
                 {errors.phone}
               </p>
             )}
@@ -219,10 +219,10 @@ export default function JoinForm() {
         <div className="space-y-2">
           <label
             htmlFor="craft"
-            className="block font-mono text-m font-bold uppercase tracking-wider text-on-surface-variant"
+            className="block font-mono text-m font-bold uppercase tracking-wider text-muted-foreground"
           >
             04. Hobby / Obsession{" "}
-            <span className="text-error font-bold">*</span>
+            <span className="text-destructive font-bold">*</span>
           </label>
           <input
             type="text"
@@ -230,18 +230,18 @@ export default function JoinForm() {
             name="craft"
             value={formData.craft}
             onChange={handleChange}
-            className={`w-full bg-surface-container-low border-0 border-b-2 border-on-surface/10 hover:border-b-primary focus:border-b-primary focus:ring-0 px-4 py-3 font-body transition-colors rounded-t ${errors.craft ? "border-b-error" : ""}`}
+            className={`w-full bg-muted border-0 border-b-2 border-foreground/30 hover:border-b-primary focus:border-b-primary focus:ring-0 px-4 py-3 font-sans transition-colors rounded-t text-foreground ${errors.craft ? "border-b-destructive" : ""}`}
             placeholder=""
           />
           {errors.craft && (
-            <p className="text-red-500 text-sm font-headline">{errors.craft}</p>
+            <p className="text-destructive text-sm font-headline">{errors.craft}</p>
           )}
         </div>
 
         <div className="space-y-2">
           <label
             htmlFor="links"
-            className="block font-mono text-m font-bold uppercase tracking-wider text-on-surface-variant"
+            className="block font-mono text-m font-bold uppercase tracking-wider text-muted-foreground"
           >
             05. Socials / Portfolio
           </label>
@@ -250,7 +250,7 @@ export default function JoinForm() {
             name="links"
             value={formData.links}
             onChange={handleChange}
-            className="w-full bg-surface-container-low border-0 border-b-2 border-on-surface/10 hover:border-b-primary focus:border-b-primary focus:ring-0 px-4 py-3 font-body transition-colors rounded-t resize-none"
+            className="w-full bg-muted border-0 border-b-2 border-foreground/30 hover:border-b-primary focus:border-b-primary focus:ring-0 px-4 py-3 font-sans transition-colors rounded-t text-foreground resize-none"
           />
         </div>
       </div>
@@ -261,11 +261,11 @@ export default function JoinForm() {
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="relative w-full bg-primary border-2 border-primary text-on-primary py-5 font-mono font-bold text-lg tracking-widest uppercase transition-all duration-300 hover:bg-primary/90 flex items-center justify-center gap-3 overflow-hidden disabled:opacity-70 disabled:cursor-not-allowed shadow-[4px_4px_0px_0px_currentColor] hover:shadow-[2px_2px_0px_0px_currentColor] hover:translate-y-0.5 hover:translate-x-0.5 group/btn"
+          className="relative w-full bg-primary border-2 border-primary text-primary-foreground py-5 font-mono font-bold text-lg tracking-widest uppercase transition-all duration-300 hover:bg-primary/90 flex items-center justify-center gap-3 overflow-hidden disabled:opacity-70 disabled:cursor-not-allowed shadow-[4px_4px_0px_0px_currentColor] hover:shadow-[2px_2px_0px_0px_currentColor] hover:translate-y-0.5 hover:translate-x-0.5 group/btn"
         >
-          <div className="absolute top-0 -left-full w-1/2 h-full bg-linear-to-r from-transparent via-on-primary/30 to-transparent group-hover/btn:left-[200%] transition-all duration-1000"></div>
+          <div className="absolute top-0 -left-full w-1/2 h-full bg-linear-to-r from-transparent via-primary-foreground/30 to-transparent group-hover/btn:left-[200%] transition-all duration-1000"></div>
           {status === "submitting" ? (
-            <span className="flex items-center gap-2 animate-pulse">
+            <span className="flex items-center gap-2 animate-pulse text-primary-foreground">
               TRANSMITTING...
             </span>
           ) : (
@@ -276,7 +276,7 @@ export default function JoinForm() {
           )}
         </button>
         {status === "error" && (
-          <p className="text-red-500 text-sm font-headline mt-4 text-center">
+          <p className="text-destructive text-sm font-headline mt-4 text-center">
             Error transmitting signal.
           </p>
         )}

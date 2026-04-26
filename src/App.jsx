@@ -102,10 +102,7 @@ function App() {
               </h2>
               <div className="h-px w-24 bg-primary"></div>
               <p className="text-on-surface-variant text-xl leading-relaxed font-body">
-                Thinkspace is not a school. We provide the infrastructure, the
-                pressure, and the community. You provide the grit. We welcome
-                thinkers and creators of all backgrounds to share, ideate, and
-                execute.
+               Thinkspace is a community like no other, we welcome thinkers and creators of all kinds to come and share their experience, ideas and innovations! We truly believe that the best outcomes come when you share your ideas and ideate over them with people of all backgrounds.
               </p>
             </div>
           </div>

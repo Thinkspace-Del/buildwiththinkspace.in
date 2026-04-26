@@ -156,7 +156,7 @@ export default function JoinForm() {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            className={`w-full bg-muted border-0 border-b-2 border-foreground/30 hover:border-b-primary focus:border-b-primary focus:ring-0 px-4 py-3 font-sans transition-colors rounded-t text-foreground ${errors.name ? "border-b-destructive" : ""}`}
+            className={`w-full bg-muted border-0 border-b-2 border-foreground/30 hover:border-b-primary focus:border-b-primary focus:outline-none px-4 py-3 font-sans transition-colors rounded-t text-foreground ${errors.name ? "border-b-destructive" : ""}`}
             placeholder=""
           />
           {errors.name && (
@@ -178,7 +178,7 @@ export default function JoinForm() {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className={`w-full bg-muted border-0 border-b-2 border-foreground/30 hover:border-b-primary focus:border-b-primary focus:ring-0 px-4 py-3 font-sans transition-colors rounded-t text-foreground ${errors.email ? "border-b-destructive" : ""}`}
+              className={`w-full bg-muted border-0 border-b-2 border-foreground/30 hover:border-b-primary focus:border-b-primary focus:outline-none px-4 py-3 font-sans transition-colors rounded-t text-foreground ${errors.email ? "border-b-destructive" : ""}`}
               placeholder=""
               onBlur={() => checkDuplicate("email", formData.email)}
             />
@@ -201,7 +201,7 @@ export default function JoinForm() {
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              className={`w-full bg-muted border-0 border-b-2 border-foreground/30 hover:border-b-primary focus:border-b-primary focus:ring-0 px-4 py-3 font-sans transition-colors rounded-t text-foreground ${errors.phone ? "border-b-destructive" : ""}`}
+              className={`w-full bg-muted border-0 border-b-2 border-foreground/30 hover:border-b-primary focus:border-b-primary focus:outline-none px-4 py-3 font-sans transition-colors rounded-t text-foreground ${errors.phone ? "border-b-destructive" : ""}`}
               placeholder=""
               onBlur={() => {
                 if (formData.phone.length === 10)
@@ -230,7 +230,7 @@ export default function JoinForm() {
             name="craft"
             value={formData.craft}
             onChange={handleChange}
-            className={`w-full bg-muted border-0 border-b-2 border-foreground/30 hover:border-b-primary focus:border-b-primary focus:ring-0 px-4 py-3 font-sans transition-colors rounded-t text-foreground ${errors.craft ? "border-b-destructive" : ""}`}
+            className={`w-full bg-muted border-0 border-b-2 border-foreground/30 hover:border-b-primary focus:border-b-primary focus:outline-none px-4 py-3 font-sans transition-colors rounded-t text-foreground ${errors.craft ? "border-b-destructive" : ""}`}
             placeholder=""
           />
           {errors.craft && (
@@ -250,7 +250,7 @@ export default function JoinForm() {
             name="links"
             value={formData.links}
             onChange={handleChange}
-            className="w-full bg-muted border-0 border-b-2 border-foreground/30 hover:border-b-primary focus:border-b-primary focus:ring-0 px-4 py-3 font-sans transition-colors rounded-t text-foreground resize-none"
+            className="w-full bg-muted border-0 border-b-2 border-foreground/30 hover:border-b-primary focus:border-b-primary focus:outline-none px-4 py-3 font-sans transition-colors rounded-t text-foreground resize-none"
           />
         </div>
       </div>

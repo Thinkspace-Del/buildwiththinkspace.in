@@ -49,7 +49,7 @@ function App() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
                 <div className="lg:col-span-7 space-y-12">
                   <div className="space-y-4">
-                    <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-[0.9]">
+                    <h1 className="text-6xl md:text-8xl lg:text-9xl font-headline font-bold tracking-tighter leading-[0.9]">
                       Don't let your day <br />
                       <span className="text-destructive italic">sweep away.</span>
                     </h1>
@@ -64,7 +64,7 @@ function App() {
                       <a
                         ref={heroButtonRef}
                         href="#join"
-                        className="bg-primary text-primary-foreground px-10 py-4 rounded-none font-bold text-lg tracking-tight active:scale-95 transition-all shadow-lg"
+                        className="bg-primary text-primary-foreground px-10 py-4 rounded-none font-bold text-lg tracking-tight active:scale-95 transition-all shadow-lg font-headline"
                       >
                         Start Building
                       </a>
@@ -108,7 +108,7 @@ function App() {
                 <div className="inline-block px-3 py-1 bg-primary text-primary-foreground font-mono text-xs uppercase tracking-widest">
                   The Definition
                 </div>
-                <h2 className="font-bold text-4xl md:text-6xl tracking-tight leading-tight">
+                <h2 className="font-bold text-4xl md:text-6xl tracking-tight leading-tight font-headline">
                   A gathering for people who realized that the only way to learn
                   is to build.
                 </h2>
@@ -134,7 +134,7 @@ function App() {
                   src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop"
                 />
                 <div className="relative z-10 max-w-5xl">
-                  <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[0.9] mb-16">
+                  <h2 className="text-5xl md:text-7xl lg:text-7xl font-bold tracking-tighter leading-[0.9] mb-16 font-headline">
                     Artist, developer, songwriter, photographer. <br />
                     <span className="text-primary italic pt-3">
                       It doesn't matter.
@@ -177,7 +177,7 @@ function App() {
           <section className="py-[108px] px-6 md:px-24 bg-primary text-primary-foreground">
             <div className="max-w-5xl mx-auto relative">
               <Quote className="w-32 h-32 opacity-10 absolute -top-12 -left-12 rotate-180" />
-              <blockquote className="font-bold text-4xl md:text-6xl leading-tight relative z-10">
+              <blockquote className="font-bold text-4xl md:text-6xl leading-tight relative z-10 font-headline">
                 "Remembering that you are going to die is the best way I know to
                 avoid the trap of thinking you have something to lose. You are
                 already naked. There is no reason not to follow your heart."
@@ -196,7 +196,7 @@ function App() {
             <div className="max-w-7xl mx-auto px-6 md:px-24 text-foreground">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
                 <div className="lg:sticky lg:top-32">
-                  <h2 className="text-6xl md:text-8xl lg:text-8xl font-bold tracking-tighter leading-[0.9] mb-12">
+                  <h2 className="text-6xl md:text-8xl lg:text-8xl font-bold tracking-tighter leading-[0.9] mb-12 font-headline">
                     Stop dreaming. <br />
                     <span className="text-primary">Start building.</span>
                   </h2>

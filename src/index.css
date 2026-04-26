@@ -1,64 +1,5 @@
 @import "tailwindcss";
 
-/*
-@theme {
-  --color-primary: var(--primary);
-  --color-primary-dark-text: var(--primary-dark-text);
-  --color-on-primary: var(--on-primary);
-  
-  --color-highlight: var(--highlight);
-  
-  --color-surface: var(--surface);
-  --color-on-surface: var(--on-surface);
-  --color-on-surface-variant: var(--on-surface-variant);
-  
-  --color-surface-container-low: var(--surface-container-low);
-  --color-surface-container-lowest: var(--surface-container-lowest);
-  --color-surface-container-high: var(--surface-container-high);
-  
-  --color-inverse-surface: var(--inverse-surface);
-  --color-inverse-on-surface: var(--inverse-on-surface);
-  
-  --font-headline: "Archivo Black", "Inter", sans-serif;
-  --font-body: "Inter", system-ui, sans-serif;
-}
-
-:root {
-  --primary: oklch(85% 0.14 250); 
-  --primary-dark-text: oklch(61.972% 0.20827 255.821); 
-  --on-primary: oklch(25% 0.04 250); 
-  
-  --highlight: oklch(86.078% 0.142 206.182); 
-  
-  --surface: oklch(30.857% 0.023 264.149); 
-  --on-surface: oklch(82.901% 0.031 222.959); 
-  --on-surface-variant: oklch(82.901% 0.031 222.959 / 0.7);
-  
-  --surface-container-low: oklch(28.036% 0.019 264.182);
-  --surface-container-lowest: oklch(26.346% 0.018 262.177);
-  --surface-container-high: oklch(24.731% 0.02 264.094);
-  
-  --inverse-surface: oklch(82.901% 0.031 222.959);
-  --inverse-on-surface: oklch(30.857% 0.023 264.149);
-
-  --grid-color: var(--primary);
-  --veil-opacity: 0.05;
-}
-
-.blueprint-grid {
-  background-image:
-    linear-gradient(to right, var(--grid-color) 0.05, transparent 1px),
-    linear-gradient(to bottom, var(--grid-color) 0.05, transparent 1px);
-  background-size: 40px 40px;
-}
-
-.dark-veil {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  opacity: var(--veil-opacity);
-  pointer-events: none;
-}
-*/
-
 @custom-variant dark (&:is(.dark *));
 
 :root {
@@ -95,8 +36,8 @@
   --sidebar-accent-foreground: oklch(0.2264 0 0);
   --sidebar-border: oklch(1.0000 0 0);
   --sidebar-ring: oklch(0.8109 0 0);
-  --font-sans: Chakra Petch, ui-sans-serif, sans-serif, system-ui;
-  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-headline: "Archivo Black", "Inter", sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
   --font-mono: IBM Plex Mono, ui-monospace, monospace;
   --radius: 0rem;
   --shadow-x: 0;
@@ -150,8 +91,8 @@
   --sidebar-accent-foreground: oklch(0 0 0);
   --sidebar-border: oklch(0 0 0);
   --sidebar-ring: oklch(0.6152 0.1657 26.9800);
-  --font-sans: Chakra Petch, ui-sans-serif, sans-serif, system-ui;
-  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-headline: "Archivo Black", "Inter", sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
   --font-mono: IBM Plex Mono, ui-monospace, monospace;
   --radius: 0rem;
   --shadow-x: 0;
@@ -205,6 +146,7 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
+  --font-headline: var(--font-headline);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
   --font-serif: var(--font-serif);

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import JoinForm from "./components/JoinForm";
@@ -6,13 +6,32 @@ import { Quote, Moon, Sun } from "lucide-react";
 
 function App() {
   const [isDark, setIsDark] = useState(false);
+  const [showNavbarAction, setShowNavbarAction] = useState(false);
+  const heroButtonRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // Show navbar action only when hero button is NOT intersecting (scrolled past)
+        // and we are below the button (boundingClientRect.top < 0)
+        setShowNavbarAction(!entry.isIntersecting && entry.boundingClientRect.top < 0);
+      },
+      { threshold: 0 }
+    );
+
+    if (heroButtonRef.current) {
+      observer.observe(heroButtonRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div
       className={`${isDark ? "dark" : ""} font-sans selection:bg-primary selection:text-primary-foreground transition-colors duration-500`}
     >
       <div className="bg-background text-foreground min-h-screen relative">
-        <Navbar />
+        <Navbar showAction={showNavbarAction} />
 
         {/* Theme Toggle Button */}
         <button
@@ -43,6 +62,7 @@ function App() {
                     </p>
                     <div className="flex flex-col sm:flex-row gap-6 items-start">
                       <a
+                        ref={heroButtonRef}
                         href="#join"
                         className="bg-primary text-primary-foreground px-10 py-4 rounded-none font-bold text-lg tracking-tight active:scale-95 transition-all shadow-lg"
                       >

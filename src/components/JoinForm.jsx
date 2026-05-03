@@ -57,7 +57,7 @@ export default function JoinForm() {
       const submitData = { ...formData };
       if (!submitData.links) delete submitData.links;
 
-      const { error } = await supabase.from("builders").insert([submitData]);
+      const { error } = await supabase.from("applicants").insert([submitData]);
 
       if (error) {
         console.error(error);
@@ -94,7 +94,7 @@ export default function JoinForm() {
     }
 
     const { data } = await supabase
-      .from("builders")
+      .from("applicants")
       .select("id")
       .eq(field, queryValue)
       .maybeSingle();
@@ -160,7 +160,9 @@ export default function JoinForm() {
             placeholder=""
           />
           {errors.name && (
-            <p className="text-destructive text-sm font-headline">{errors.name}</p>
+            <p className="text-destructive text-sm font-headline">
+              {errors.name}
+            </p>
           )}
         </div>
 
@@ -234,7 +236,9 @@ export default function JoinForm() {
             placeholder=""
           />
           {errors.craft && (
-            <p className="text-destructive text-sm font-headline">{errors.craft}</p>
+            <p className="text-destructive text-sm font-headline">
+              {errors.craft}
+            </p>
           )}
         </div>
 
